@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_gen/gen_l10n/app_localizations.dart';
+
+import '../../../config/values/asset_constants.dart';
+import '../../../config/values/color_constants.dart';
 
 class SplashPage extends StatelessWidget {
   const SplashPage({Key? key}) : super(key: key);
@@ -7,9 +9,18 @@ class SplashPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: kColorBlack,
       body: Column(
+        mainAxisAlignment: MainAxisAlignment.center,
         children: <Widget>[
-          Text(AppLocalizations.of(context)?.appTitle ?? ''),
+          Row(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              Expanded(
+                child: Image.asset(kImageRickyAndMortyLogo),
+              ),
+            ],
+          ),
         ],
       ),
     );
